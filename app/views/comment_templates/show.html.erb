@@ -47,7 +47,11 @@
       </dt>
       <!-- Display commentor_id start -->
       <dd>
-        <%= @comment.commentor_id %>
+        <% if @comment.commentor.present? %>
+          <a href="/users/<%= @comment.commentor_id %>">
+            <%= @comment.commentor.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display commentor_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display user_race_id start -->
       <dd>
-        <%= @comment.user_race_id %>
+        <% if @comment.user_race.present? %>
+          <a href="/user_races/<%= @comment.user_race_id %>">
+            <%= @comment.user_race.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_race_id end -->
 

@@ -72,7 +72,11 @@
 
         <!-- Display race.event_id start -->
         <td>
-          <%= race.event.created_at %>
+          <% if race.event.present? %>
+            <a href="/events/<%= race.event.id %>">
+              <%= race.event.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display race.event_id end -->
 

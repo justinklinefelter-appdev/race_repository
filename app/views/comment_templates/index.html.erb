@@ -68,13 +68,21 @@
 
         <!-- Display comment.commentor_id start -->
         <td>
-          <%= comment.commentor.email %>
+          <% if comment.commentor.present? %>
+            <a href="/users/<%= comment.commentor.id %>">
+              <%= comment.commentor.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.commentor_id end -->
 
         <!-- Display comment.user_race_id start -->
         <td>
-          <%= comment.user_race.user_id %>
+          <% if comment.user_race.present? %>
+            <a href="/user_races/<%= comment.user_race.id %>">
+              <%= comment.user_race.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.user_race_id end -->
 
