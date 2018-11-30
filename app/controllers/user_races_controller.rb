@@ -10,7 +10,7 @@ class UserRacesController < ApplicationController
   end
 
   def index
-    @user_races = UserRace.all
+    @user_races = UserRace.page(params[:page]).per(10)
 
     render("user_race_templates/index.html.erb")
   end
