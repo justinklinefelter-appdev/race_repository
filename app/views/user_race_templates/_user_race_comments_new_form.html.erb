@@ -1,29 +1,16 @@
-<!-- Form comment start -->
 <form action="/create_comment_from_user_race" method="post">
-<!-- Form comment end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <input type="text" id="body" name="body" class="form-control" value="<%= @comment.body %>">
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
-  <!-- Label and input for commentor_id start -->
-  <!-- Input for "commentor_id" start -->
   <input type="hidden" name="commentor_id" value="<%= current_user.id %>">
-  <!-- Input for "commentor_id" end -->
-  <!-- Label and input for commentor_id end -->
 
-  <!-- Label and input for user_race_id start -->
-  <!-- Input for user_race_id start -->
   <input type="hidden" name="user_race_id" value="<%= @user_race.id %>">
-  <!-- Input for user_race_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create comment

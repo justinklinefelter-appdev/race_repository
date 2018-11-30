@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @event.present? %>
   <% if @event.errors.any? %>
     <% @event.errors.full_messages.each do |message| %>
@@ -16,9 +15,7 @@
 
 <hr>
 
-<!-- Form event start -->
 <form action="/create_event" method="post">
-<!-- Form event end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create event

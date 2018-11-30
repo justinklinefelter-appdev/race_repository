@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @event.errors.any? %>
   <% @event.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,9 +12,7 @@
 
 <hr>
 
-<!-- Form event start -->
 <form action="/update_event/<%= @event.id %>" method="post">
-<!-- Form event end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update event
