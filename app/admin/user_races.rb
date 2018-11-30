@@ -1,4 +1,6 @@
 ActiveAdmin.register UserRace do
+
+ permit_params :user_id, :race_id, :time, :body, :overall_place, :age_group_place
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
