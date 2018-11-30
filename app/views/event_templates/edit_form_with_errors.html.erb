@@ -1,0 +1,29 @@
+<!-- Validation failure messages -->
+<% if @event.errors.any? %>
+  <% @event.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit event #<%= @event.id %>
+</h1>
+
+<hr>
+
+<!-- Form event start -->
+<form action="/update_event/<%= @event.id %>" method="post">
+<!-- Form event end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update event
+  </button>
+</form>
+
+<hr>
+
+<a href="/events">
+  Go back
+</a>
