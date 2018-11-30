@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :races,
+             :through => :user_races,
+             :source => :race
+
   # Validations
 
   # Include default devise modules. Others available are:
