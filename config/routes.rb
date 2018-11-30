@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the User race resource:
+
+  # CREATE
+  get("/user_races/new", { :controller => "user_races", :action => "new_form" })
+  post("/create_user_race", { :controller => "user_races", :action => "create_row" })
+
+  # READ
+  get("/user_races", { :controller => "user_races", :action => "index" })
+  get("/user_races/:id_to_display", { :controller => "user_races", :action => "show" })
+
+  # UPDATE
+  get("/user_races/:prefill_with_id/edit", { :controller => "user_races", :action => "edit_form" })
+  post("/update_user_race/:id_to_modify", { :controller => "user_races", :action => "update_row" })
+
+  # DELETE
+  get("/delete_user_race/:id_to_remove", { :controller => "user_races", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Comment resource:
 
   # CREATE

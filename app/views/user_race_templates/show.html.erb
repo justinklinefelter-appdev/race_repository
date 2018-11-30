@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      User race #<%= @user_race.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/user_races" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link user_race start -->
+      <div class="col">
+        <a href="/user_races/<%= @user_race.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit user race
+        </a>
+      </div>
+      <!-- Edit link user_race end -->
+
+      <!-- Delete link user_race start -->
+      <div class="col">
+        <a href="/delete_user_race/<%= @user_race.id %>" class="btn btn-block btn-outline-secondary">
+          Delete user race
+        </a>
+      </div>
+      <!-- Delete link user_race end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @user_race.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Race
+      </dt>
+      <!-- Display race_id start -->
+      <dd>
+        <%= @user_race.race_id %>
+      </dd>
+      <!-- Display race_id end -->
+
+      <dt>
+        Time
+      </dt>
+      <!-- Display time start -->
+      <dd>
+        <%= @user_race.time %>
+      </dd>
+      <!-- Display time end -->
+
+      <dt>
+        Body
+      </dt>
+      <!-- Display body start -->
+      <dd>
+        <%= @user_race.body %>
+      </dd>
+      <!-- Display body end -->
+
+      <dt>
+        Overall place
+      </dt>
+      <!-- Display overall_place start -->
+      <dd>
+        <%= @user_race.overall_place %>
+      </dd>
+      <!-- Display overall_place end -->
+
+      <dt>
+        Age group place
+      </dt>
+      <!-- Display age_group_place start -->
+      <dd>
+        <%= @user_race.age_group_place %>
+      </dd>
+      <!-- Display age_group_place end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_race.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_race.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
