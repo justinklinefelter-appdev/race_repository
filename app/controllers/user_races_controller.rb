@@ -1,4 +1,14 @@
 class UserRacesController < ApplicationController
+  before_action :current_user_must_be_user_race_user, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_user_must_be_user_race_user
+    user_race = UserRace.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_user == user_race.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @user_races = UserRace.all
 

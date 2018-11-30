@@ -13,17 +13,21 @@
 
       <!-- Edit link user_race start -->
       <div class="col">
-        <a href="/user_races/<%= @user_race.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit user race
-        </a>
+        <% if current_user == @user_race.user %>
+          <a href="/user_races/<%= @user_race.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit user_race
+          </a>
+        <% end %>
       </div>
       <!-- Edit link user_race end -->
 
       <!-- Delete link user_race start -->
       <div class="col">
-        <a href="/delete_user_race/<%= @user_race.id %>" class="btn btn-block btn-outline-secondary">
-          Delete user race
-        </a>
+        <% if current_user == @user_race.user %>
+          <a href="/delete_user_race/<%= @user_race.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete user_race
+          </a>
+        <% end %>
       </div>
       <!-- Delete link user_race end -->
     </div>
