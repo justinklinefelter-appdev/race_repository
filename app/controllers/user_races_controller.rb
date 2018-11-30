@@ -61,6 +61,22 @@ class UserRacesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @user_race = UserRace.find(params.fetch("id_to_remove"))
+
+    @user_race.destroy
+
+    redirect_to("/users/#{@user_race.user_id}", notice: "UserRace deleted successfully.")
+  end
+
+  def destroy_row_from_race
+    @user_race = UserRace.find(params.fetch("id_to_remove"))
+
+    @user_race.destroy
+
+    redirect_to("/races/#{@user_race.race_id}", notice: "UserRace deleted successfully.")
+  end
+
   def destroy_row
     @user_race = UserRace.find(params.fetch("id_to_remove"))
 
