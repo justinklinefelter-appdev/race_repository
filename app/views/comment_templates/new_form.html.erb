@@ -22,15 +22,9 @@
   <!-- Label and input for body end -->
 
   <!-- Label and input for commentor_id start -->
-  <div class="form-group">
-    <label for="commentor_id">
-      Commentor
-    </label>
-
-    <!-- Input for commentor_id start -->
-    <%= select_tag(:commentor_id, options_from_collection_for_select(User.all, :id, :email, @comment.commentor_id), :class => "form-control") %>
-    <!-- Input for commentor_id end -->
-  </div>
+  <!-- Input for "commentor_id" start -->
+  <input type="hidden" name="commentor_id" value="<%= current_user.id %>">
+  <!-- Input for "commentor_id" end -->
   <!-- Label and input for commentor_id end -->
 
   <!-- Label and input for user_race_id start -->
