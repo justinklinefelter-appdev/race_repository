@@ -65,7 +65,7 @@ class UserRacesController < ApplicationController
   def update_row
     @user_race = UserRace.find(params.fetch("id_to_modify"))
 
-    @user_race.user_id = params.fetch("user_id")
+    
     @user_race.race_id = params.fetch("race_id")
     @user_race.time = params.fetch("time")
     @user_race.body = params.fetch("body")
